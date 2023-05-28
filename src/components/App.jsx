@@ -16,6 +16,7 @@ export default function App () {
   const [page, setPage] = useState(1);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  console.log(error);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
