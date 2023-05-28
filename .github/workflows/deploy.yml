@@ -11,6 +11,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
+      - name: npm test:ci
+         run: npm run test:ci
+          env:
+            CI: ""
+
       - name: Install, lint, build 🔧
         run: |
           npm install
@@ -22,7 +27,4 @@ jobs:
         with:
           branch: gh-pages
           folder: build
-      - name: npm test:ci
-         run: npm run test:ci
-          env:
-            CI: ""
+      
