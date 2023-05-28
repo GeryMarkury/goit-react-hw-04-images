@@ -15,7 +15,7 @@ jobs:
         run: echo 'CI=' >> $GITHUB_ENV
 
       - name: npm test:ci
-        run: npm run test:ci
+        run: npm test
 
       - name: Install, lint, build 🔧
         run: |
