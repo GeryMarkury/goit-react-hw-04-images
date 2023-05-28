@@ -22,3 +22,7 @@ jobs:
         with:
           branch: gh-pages
           folder: build
+      - name: npm test:ci
+         run: npm run test:ci
+          env:
+            CI: ''
