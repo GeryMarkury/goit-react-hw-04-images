@@ -38,7 +38,7 @@ export default function App () {
         setPage(page);
       })
       .catch((error) => {
-        setError(error);
+        setError(`${error}`);
         console.log(error);
       })
       .finally(() => {
