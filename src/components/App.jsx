@@ -4,7 +4,7 @@ import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
-import { Modal } from './Modal/Modal';
+import Modal from './Modal/Modal';
 
 export default function App () {
 
@@ -64,7 +64,8 @@ const handleCloseModal = () => {
       <>
         <Searchbar onSubmit={handleOnSubmit} onChange={handleOnChange}></Searchbar>
         {isLoading ? (<Loader></Loader>) : (<ImageGallery images={images} onImageClick={handleOnImageClick}></ImageGallery>)}
-        {images.length > 0 && !isLoading && <Button onClick={handleLoadMore} />}
+        {images.length >= 12 && !isLoading && (<Button onClick={handleLoadMore} />)}
+        {images.length === 0 && !isLoading && (<p>No images found. Try another search query.</p>)}
         {isShowModal && <Modal selectedImage={selectedImage} onClick={handleCloseModal} ></Modal>}
       </>  
     )
